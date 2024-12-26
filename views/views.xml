@@ -1,19 +1,18 @@
 <odoo>
   <data>
     <!-- explicit list view definition -->
-<!--
+
     <record model="ir.ui.view" id="shipping_cne.list">
       <field name="name">shipping_cne list</field>
       <field name="model">shipping_cne.shipping_cne</field>
       <field name="arch" type="xml">
         <list>
           <field name="name"/>
-          <field name="value"/>
-          <field name="value2"/>
+          <field name="shipping_code"/>
         </list>
       </field>
     </record>
--->
+
 
     <!-- actions opening views on models -->
 
@@ -64,6 +63,8 @@
         <xpath expr="//header" position="inside">
           <button name="%(action_shipping_cne_sale_order_batch)d" type="action" string="Shipping CNE" class="oe_highlight"/>
         </xpath>
+        
+             <field name="partner_id" string="Country" />
       </field>
     </record>
 
