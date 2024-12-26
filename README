@@ -1,0 +1,21 @@
+# Shipping CNE Module for Odoo 18.0
+
+This module allows you to integrate CNE shipping services with Odoo. It allows you to get shipping rates, create shipping labels, and track shipments.
+
+## Features
+
+- Get shipping rates
+- Create shipping labels
+- Track shipments
+
+## Installation
+
+To install this module, you need to:
+
+1. Download the module and add it to your custom addons folder.
+2. Install the module from the Apps menu in Odoo.
+
+## Requirements
+
+- You need to have a CNE account to use this module.
+- You need to have the CNE API credentials.
