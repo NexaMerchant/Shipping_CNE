@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_shipping_cne_shipping_cne,shipping_cne.shipping_cne,model_shipping_cne_shipping_cne,base.group_user,1,1,1,1
