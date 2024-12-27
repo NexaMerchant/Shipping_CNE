@@ -22,38 +22,6 @@
       <field name="view_mode">list,form</field>
     </record>
 
-
-    <!-- server action to the one above -->
-
-    <record model="ir.actions.server" id="shipping_cne.action_server">
-      <field name="name">shipping_cne server</field>
-      <field name="model_id" ref="model_shipping_cne_shipping_cne"/>
-      <field name="state">code</field>
-      <field name="code">
-        action = {
-          "type": "ir.actions.act_window",
-          "view_mode": "list,form",
-          "res_model": model._name,
-        }
-      </field>
-    </record>
-
-    <!-- Server action definition -->
-    <record model="ir.actions.server" id="action_shipping_cne_sale_order_batch">
-      <field name="name">Shipping CNE Batch Action</field>
-      <field name="model_id" ref="sale.model_sale_order"/>
-      <field name="binding_model_id" ref="sale.model_sale_order"/>
-      <field name="state">code</field>
-      <field name="code">
-        action = {
-          "type": "ir.actions.act_window",
-          "view_mode": "list,form",
-          "res_model": "shipping_cne.shipping_cne",
-          "target": "new",
-        }
-      </field>
-    </record>
-
     <!-- Sale Order Use Shipping CNE Get Shipping Code -->
     <!-- Add a button to the Sale Order list view -->
 
@@ -67,16 +35,16 @@
       <field name="inherit_id" ref="sale.view_order_tree"/>
       <field name="arch" type="xml">
         <xpath expr="//header" position="inside">
-          <button name="%(action_shipping_cne_sale_order_batch)d" type="action" string="Shipping CNE" class="oe_highlight"/>
-          <!-- batch get the shipping code -->
-          <button name="%(action_shipping_cne_sale_order_batch)d" type="action" string="Shipping CNE" class="oe_highlight"/>
+          <button name="%(action_shipping_selection_wizard)d" type="action" string="Chose Shipping" class="oe_highlight"/>
         </xpath>
-        
-             <field name="partner_id" string="Country" />
+        <xpath expr="//field[@name='partner_id']" position="after">
+          <field name="order_line_display" widget="html"/>
+          <!-- <field name="shipping_conutry" invisible="1"/> -->
+        </xpath>
       </field>
     </record>
 
-    <!-- Add a button to the Sale Order form view -->
+    <!-- Add a button to the Sale Order form view for batch select shipping -->
     <record id="action_shipping_selection_wizard" model="ir.actions.act_window">
       <field name="name">Select Shipping</field>
       <field name="type">ir.actions.act_window</field>
@@ -102,7 +70,9 @@
           </form>
       </field>
    </record>
-   <!-- Add a button to the Sale Order form view -->
+   <!-- Add Order Line to the Sale Order Tree  -->
+
+
 
 
     <!-- Top menu item -->
