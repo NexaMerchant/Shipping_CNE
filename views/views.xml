@@ -54,6 +54,12 @@
       </field>
     </record>
 
+    <!-- Sale Order Use Shipping CNE Get Shipping Code -->
+    <!-- Add a button to the Sale Order list view -->
+
+
+
+
     <!-- Extend the Sale Order list view -->
     <record id="view_order_tree_inherit_shipping_cne" model="ir.ui.view">
       <field name="name">sale.order.tree.inherit.shipping.cne</field>
@@ -62,11 +68,41 @@
       <field name="arch" type="xml">
         <xpath expr="//header" position="inside">
           <button name="%(action_shipping_cne_sale_order_batch)d" type="action" string="Shipping CNE" class="oe_highlight"/>
+          <!-- batch get the shipping code -->
+          <button name="%(action_shipping_cne_sale_order_batch)d" type="action" string="Shipping CNE" class="oe_highlight"/>
         </xpath>
         
              <field name="partner_id" string="Country" />
       </field>
     </record>
+
+    <!-- Add a button to the Sale Order form view -->
+    <record id="action_shipping_selection_wizard" model="ir.actions.act_window">
+      <field name="name">Select Shipping</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">shipping.selection.wizard</field>
+      <field name="view_mode">form</field>
+      <field name="target">new</field>
+      <field name="binding_model_id" ref="sale.model_sale_order"/>
+      <field name="context">{'default_sale_order_ids': active_ids}</field>
+    </record>
+
+    <record id="view_shipping_selection_wizard" model="ir.ui.view">
+      <field name="name">shipping.selection.wizard.form</field>
+      <field name="model">shipping.selection.wizard</field>
+      <field name="arch" type="xml">
+          <form string="Select Shipping Method">
+              <group>
+                  <field name="carrier_id"/>
+              </group>
+              <footer>
+                  <button name="apply_shipping" string="Apply" type="object" class="btn-primary"/>
+                  <button string="Cancel" class="btn-secondary" special="cancel"/>
+              </footer>
+          </form>
+      </field>
+   </record>
+   <!-- Add a button to the Sale Order form view -->
 
 
     <!-- Top menu item -->
