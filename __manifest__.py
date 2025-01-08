@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "shipping_cne",
+    'name': "delivery_cne",
 
-    'summary': "Shipping CNE",
+    'summary': "Delivery CNE",
 
     'description': """
-Shipping CNE
+Delivery CNE
     """,
 
     'author': "Steve Liu",
-    'website': "https://github.com/NexaMerchant/Shipping_CNE",
+    'website': "https://github.com/NexaMerchant/delivery_cne",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/15.0/odoo/addons/base/data/ir_module_category_data.xml

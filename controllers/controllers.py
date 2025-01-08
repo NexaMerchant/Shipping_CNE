@@ -3,20 +3,20 @@
 
 
 # class ShippingCne(http.Controller):
-#     @http.route('/shipping_cne/shipping_cne', auth='public')
+#     @http.route('/delivery_cne/delivery_cne', auth='public')
 #     def index(self, **kw):
 #         return "Hello, world"
 
-#     @http.route('/shipping_cne/shipping_cne/objects', auth='public')
+#     @http.route('/delivery_cne/delivery_cne/objects', auth='public')
 #     def list(self, **kw):
-#         return http.request.render('shipping_cne.listing', {
-#             'root': '/shipping_cne/shipping_cne',
-#             'objects': http.request.env['shipping_cne.shipping_cne'].search([]),
+#         return http.request.render('delivery_cne.listing', {
+#             'root': '/delivery_cne/delivery_cne',
+#             'objects': http.request.env['delivery_cne.delivery_cne'].search([]),
 #         })
 
-#     @http.route('/shipping_cne/shipping_cne/objects/<model("shipping_cne.shipping_cne"):obj>', auth='public')
+#     @http.route('/delivery_cne/delivery_cne/objects/<model("delivery_cne.delivery_cne"):obj>', auth='public')
 #     def object(self, obj, **kw):
-#         return http.request.render('shipping_cne.object', {
+#         return http.request.render('delivery_cne.object', {
 #             'object': obj
 #         })
 

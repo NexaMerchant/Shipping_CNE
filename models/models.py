@@ -3,9 +3,9 @@
 from odoo import models, fields, api
 
 
-class shipping_cne(models.Model):
-    _name = 'shipping_cne.shipping_cne'
-    _description = 'shipping_cne.shipping_cne'
+class delivery_cne(models.Model):
+    _name = 'delivery_cne.delivery_cne'
+    _description = 'delivery_cne.delivery_cne'
 
     name = fields.Char()
     date = fields.Date()
@@ -24,8 +24,8 @@ class shipping_cne(models.Model):
 
     @api.model
     def create(self, vals):
-        vals['name'] = self.env['ir.sequence'].next_by_code('shipping_cne.shipping_cne') or '/'
-        return super(shipping_cne, self).create(vals)
+        vals['name'] = self.env['ir.sequence'].next_by_code('delivery_cne.delivery_cne') or '/'
+        return super(delivery_cne, self).create(vals)
     
     @api.model
     def _get_default_user(self):
@@ -47,7 +47,7 @@ class shipping_cne(models.Model):
     # create a new shipping for the order
     @api.model
     def create_shipping(self):
-        return self.env['shipping_cne.shipping_cne'].create({
+        return self.env['delivery_cne.delivery_cne'].create({
             'order_id': self._get_default_order().id,
             'shipping_code': self._get_default_code().id,
             'shipping_user': self._get_default_user().id,
