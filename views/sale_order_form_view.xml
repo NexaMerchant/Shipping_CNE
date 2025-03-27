@@ -1,0 +1,17 @@
+<odoo>
+    <data>
+        <record id="view_sale_order_form_inherit_cne" model="ir.ui.view">
+            <field name="name">sale.order.form.inherit.cne</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='partner_shipping_id']" position="after">
+                    <group>
+                        <field name="delivery_cne"/>
+                        <field name="cne_delivery_option" options="{'invisible': [('delivery_cne','=', False)]}"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_delivery_cne_delivery_cne,access_delivery_cne_delivery_cne,model_delivery_cne_delivery_cne,base.group_user,1,1,1,1
+access_delivery_carrier_cne,access_delivery_carrier_cne,model_delivery_carrier,base.group_user,1,1,1,1
+access_sale_order_delivery_cne,access_sale_order_delivery_cne,model_sale_order,base.group_user,1,1,1,1

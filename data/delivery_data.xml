@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Product Category -->
+        <record id="product_category_cne_delivery" model="product.category">
+            <field name="name">CNE Delivery</field>
+            <field name="parent_id" ref="delivery.product_category_deliveries"/>
+        </record>
+    </data>
+</odoo>
